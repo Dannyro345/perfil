@@ -1,0 +1,39 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-button href='/home'>voltar</ion-button>
+    </ion-buttons>
+
+    <ion-title>Cadastro</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card>
+
+    <ion-card-content>
+
+      <ion-item>
+        <ion-label>Nome: </ion-label>
+        <ion-input [(ngModel)]="novo_perfil.nome"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label>Idade: </ion-label>
+        <ion-input [(ngModel)]="novo_perfil.idade"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-input [(ngModel)]="novo_perfil.avatar"></ion-input>
+        <img src="{{novo_perfil.avatar}}" alt="">
+        <ion-button (click)="take_picture()">
+          <ion-icon name="camera"></ion-icon>
+        </ion-button>
+      </ion-item>
+
+      <ion-button expanded="full" (click)="add()">Vai</ion-button>
+
+    </ion-card-content>
+
+  </ion-card>
+</ion-content>
