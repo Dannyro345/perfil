@@ -12,14 +12,20 @@
       <ion-card>
         <img src="{{perfil.avatar}}" alt="Avatar">
         <ion-card-header>
-          <le>{{perfil.nome}}</ion-card-title>
+          <ion-card-title>{{perfil.nome}}</ion-card-title>
           <ion-card-subtitle>{{perfil.idade}}</ion-card-subtitle>
         </ion-card-header>
 
         <ion-card-content>
           <ion-item>
+            
             <ion-icon name="heart" slot="start" (click)="likes(perfil)"></ion-icon>
             <ion-badge slot="end">{{perfil.likes}}</ion-badge>
+
+            <ion-item-option color="light" (click)="remove(perfil)">
+              <ion-icon name="trash"></ion-icon>
+            </ion-item-option>
+
           </ion-item>
         </ion-card-content>
       </ion-card>
