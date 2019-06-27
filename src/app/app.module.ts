@@ -12,8 +12,13 @@ import { AppRoutingModule } from './app-routing.module';
 // Importação do modal
 import { PerfilModalPageModule } from './perfil-modal/perfil-modal.module';
 
+// Storage
+import { IonicStorageModule } from '@ionic/storage';
+
 // Camera
 import {Camera} from '@ionic-native/camera/ngx';
+
+import {HttpClientModule} from '@angular/common/http';
 
 @NgModule({
   declarations: [AppComponent],
@@ -22,7 +27,10 @@ import {Camera} from '@ionic-native/camera/ngx';
     IonicModule.forRoot(), 
     AppRoutingModule, 
     // Declarando o modal
-    PerfilModalPageModule],
+    PerfilModalPageModule,
+    IonicStorageModule.forRoot(),
+    HttpClientModule
+  ],
   providers: [
     StatusBar,
     SplashScreen,

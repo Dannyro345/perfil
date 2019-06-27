@@ -11,17 +11,16 @@
 
       <ion-item>
         <ion-label>Nome: </ion-label>
-        <ion-input [(ngModel)]="novo_perfil.nome"></ion-input>
+        <ion-input [(ngModel)]="perfil.nome"></ion-input>
       </ion-item>
 
       <ion-item>
         <ion-label>Idade: </ion-label>
-        <ion-input [(ngModel)]="novo_perfil.idade"></ion-input>
+        <ion-input [(ngModel)]="perfil.idade"></ion-input>
       </ion-item>
 
       <ion-item>
-        <ion-input [(ngModel)]="novo_perfil.avatar"></ion-input>
-        <img src="{{novo_perfil.avatar}}" alt="">
+        <img src="{{perfil.avatar}}" alt="">
         <ion-button (click)="take_picture()">
           <ion-icon name="camera"></ion-icon>
         </ion-button>
