@@ -12,9 +12,6 @@ import { AppRoutingModule } from './app-routing.module';
 // Importação do modal
 import { PerfilModalPageModule } from './perfil-modal/perfil-modal.module';
 
-// Storage
-import { IonicStorageModule } from '@ionic/storage';
-
 // Camera
 import {Camera} from '@ionic-native/camera/ngx';
 
@@ -28,7 +25,6 @@ import {HttpClientModule} from '@angular/common/http';
     AppRoutingModule, 
     // Declarando o modal
     PerfilModalPageModule,
-    IonicStorageModule.forRoot(),
     HttpClientModule
   ],
   providers: [

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ModalController} from '@ionic/angular';
 
+
 // Importando a camera
 import { Camera, CameraOptions } from '@ionic-native/camera/ngx';
 
