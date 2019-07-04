@@ -12,7 +12,7 @@ import {PerfilService} from '../services/perfil.service';
   styleUrls: ['home.page.scss'],
 })
 export class HomePage {
-  
+
   perfis: any;
 
   constructor(public modalController: ModalController, public alertController: AlertController,
@@ -67,9 +67,6 @@ export class HomePage {
         }, {
           text: 'Ok',
           handler: async () => {
-            // Atualizar formulário
-            this.perfis = perfil
-
             // Remover o item selecionado da lista
             this.loadingController.create({
               message: 'Ok'
@@ -77,6 +74,7 @@ export class HomePage {
               loader.present();
               this.perfilService.remove(perfil).subscribe(
                 (data) => {
+                  console.log(data);
                   var i = this.perfis.indexOf(perfil);
                   this.perfis.splice(i, 1);
                   loader.dismiss();
