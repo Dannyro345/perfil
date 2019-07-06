@@ -18,4 +18,8 @@ URL_BASE = "https://5d14085576f3f5001415f49a.mockapi.io/perfil/";
   remove(perfil) {
     return this.http.delete(this.URL_BASE + perfil.id)
   }
+
+  edit(perfil) {
+    return this.http.put(this.URL_BASE + perfil.id, perfil)
+  }
 }

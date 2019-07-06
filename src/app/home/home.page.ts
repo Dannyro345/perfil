@@ -22,7 +22,7 @@ export class HomePage {
 
     // Loading
     this.loadingController.create({
-      message: 'Hellooo',
+      message: 'Carregando',
     }).then((loader) => {
       loader.present();
       this.perfilService.list().subscribe(
@@ -36,7 +36,7 @@ export class HomePage {
 
   add(perfil) {
     this.loadingController.create({
-      message: 'Ok'
+      message: 'Carregando'
     }).then((loader) => {
       loader.present();
       this.perfilService.add(perfil).subscribe(
@@ -48,8 +48,18 @@ export class HomePage {
     });
   }
 
-  likes(perfis) {
-    perfis.likes = perfis.likes + 1;
+  likes(perfil) {
+    this.loadingController.create({
+      message: 'Carregando'
+    }).then((loader) => {
+      loader.present();
+      perfil.likes = perfil.likes + 1;
+      this.perfilService.edit(perfil).subscribe(
+        (data) => {
+          loader.dismiss();
+        }
+      )
+    });
   }
 
   async remove(perfil) {
@@ -69,7 +79,7 @@ export class HomePage {
           handler: async () => {
             // Remover o item selecionado da lista
             this.loadingController.create({
-              message: 'Ok'
+              message: 'Carregando'
             }).then((loader) => {
               loader.present();
               this.perfilService.remove(perfil).subscribe(
